@@ -15,7 +15,11 @@ func _process(delta):
 func fireAt(posi):
 	var rt = rocket.instance()
 	get_parent().add_child(rt)
-	rt.set_pos(posi)
+	
+	rt.set_pos(Vector2(position.x, position.y - 15))
+	
+	rt.set_target(posi)
+	
 	
 func hit(damage):
 	if damage > health:

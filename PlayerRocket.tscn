@@ -7,6 +7,7 @@
 radius = 4.0191
 
 [node name="PlayerRocket" type="RigidBody2D"]
+gravity_scale = 0.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

@@ -11,5 +11,5 @@ func setField():
 	pass
 
 func _input(event):
-	if event is InputEventScreenTouch or event is InputEventMouseButton:
+	if event is InputEventMouseButton:
 		get_tree().call_group("turrets", "fireAt", event.position)
