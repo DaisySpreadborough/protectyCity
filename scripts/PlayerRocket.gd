@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var speed = 300
+var distance
 var direction
 
 func _ready():
@@ -10,7 +11,8 @@ func set_pos(posi):
 	position = posi
 	
 func set_target(enemyPos):
-	direction = Vector2(position.x - enemyPos.x, position.y - enemyPos.y)
+	distance = (enemyPos.x - position.x) / (enemyPos.y - position.y)
+	direction = Vector2(enemyPos.x - position.x, enemyPos.y - position.y)
 	direction = direction.normalized()
-	add_force(Vector2(0,0), -(direction * speed))
+	linear_velocity = direction * speed
 
