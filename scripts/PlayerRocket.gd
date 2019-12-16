@@ -11,8 +11,14 @@ func set_pos(posi):
 	position = posi
 	
 func set_target(enemyPos):
-	distance = (enemyPos.x - position.x) / (enemyPos.y - position.y)
+	distance = global_position.distance_to(enemyPos)
 	direction = Vector2(enemyPos.x - position.x, enemyPos.y - position.y)
 	direction = direction.normalized()
 	linear_velocity = direction * speed
+	set_time()
 
+func set_time():
+	$death.start(distance / speed)
+
+func explode():
+	queue_free()

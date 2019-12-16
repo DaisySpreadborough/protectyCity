@@ -7,10 +7,10 @@
 script = ExtResource( 1 )
 
 [node name="Turret" parent="." instance=ExtResource( 2 )]
-position = Vector2( 100, 500 )
+position = Vector2( 50, 500 )
 
 [node name="Turret2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 157.639, 495.94 )
+position = Vector2( 150, 500 )
 
 [node name="Turret3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 228.473, 499.397 )
+position = Vector2( 250, 500 )
