@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var explosion = preload("res://explosion.tscn")
+
 var speed = 300
 var distance
 var direction
@@ -21,4 +23,7 @@ func set_time():
 	$death.start(distance / speed)
 
 func explode():
+	var expl = explosion.instance()
+	get_parent().add_child(expl)
+	expl.position = global_position
 	queue_free()
