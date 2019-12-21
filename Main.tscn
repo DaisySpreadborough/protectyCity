@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/enemyRocketSpawner.gd" type="Script" id=3]
+[ext_resource path="res://city.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,3 +16,19 @@ position = Vector2( 150, 500 )
 
 [node name="Turret3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 250, 500 )
+
+[node name="enemyRocketSpawner" type="Position2D" parent="."]
+position = Vector2( 141, -12 )
+script = ExtResource( 3 )
+
+[node name="city" parent="." instance=ExtResource( 4 )]
+position = Vector2( 98, 498 )
+
+[node name="city3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 13, 501 )
+
+[node name="city4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 285, 498 )
+
+[node name="city2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 203, 499 )

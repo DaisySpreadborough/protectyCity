@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var rocket = preload("res://PlayerRocket.tscn")
 
-var rocketSpeed = 30
+var rocketSpeed = 75
 var health = 300
 
 func _ready():
@@ -17,7 +17,7 @@ func fireAt(posi):
 	get_parent().add_child(rt)
 	
 	rt.set_pos(Vector2(position.x, position.y - 15))
-	
+	rt.set_speed(rocketSpeed)
 	rt.set_target(posi)
 	
 	

@@ -11,6 +11,9 @@ func _ready():
 
 func set_pos(posi):
 	position = posi
+
+func set_speed(nSpeed):
+	speed = nSpeed
 	
 func set_target(enemyPos):
 	distance = global_position.distance_to(enemyPos)
