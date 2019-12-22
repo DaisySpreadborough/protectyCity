@@ -21,4 +21,5 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="death" type="Timer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_PlayerRocket_body_entered"]
 [connection signal="timeout" from="death" to="." method="explode"]

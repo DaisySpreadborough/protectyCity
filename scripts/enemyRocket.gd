@@ -20,7 +20,7 @@ func set_target(enemyPos):
 	direction = Vector2(enemyPos.x - position.x, enemyPos.y - position.y)
 	direction = direction.normalized()
 	linear_velocity = direction * speed
-#set_time()
+	set_time()
 
 func set_time():
 	$death.start(distance / speed)
@@ -30,3 +30,7 @@ func explode():
 	get_parent().add_child(expl)
 	expl.position = global_position
 	queue_free()
+
+func _on_enemyRocket_body_entered(body):
+	explode()
+	pass # Replace with function body.

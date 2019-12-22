@@ -30,3 +30,7 @@ func explode():
 	get_parent().add_child(expl)
 	expl.position = global_position
 	queue_free()
+
+func _on_PlayerRocket_body_entered(body):
+	explode()
+	pass # Replace with function body.

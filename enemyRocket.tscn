@@ -8,6 +8,8 @@ radius = 3.53819
 
 [node name="enemyRocket" type="RigidBody2D"]
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
 linear_damp = 0.0
 script = ExtResource( 1 )
 
@@ -16,3 +18,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="death" type="Timer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_enemyRocket_body_entered"]
+[connection signal="timeout" from="death" to="." method="explode"]
