@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends RigidBody2D
 
 var size = 0
 var speed = 20
@@ -19,3 +19,9 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	queue_free()
+
+
+func _on_explosion_body_entered(body):
+	if body.is_in_group("cities"):
+		body.destroy()
+	pass 

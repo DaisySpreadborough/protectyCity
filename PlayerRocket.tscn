@@ -8,6 +8,8 @@ radius = 4.0191
 
 [node name="PlayerRocket" type="RigidBody2D"]
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
 linear_damp = 0.0
 script = ExtResource( 1 )
 __meta__ = {

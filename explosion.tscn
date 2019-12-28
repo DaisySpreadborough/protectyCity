@@ -6,7 +6,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.24206
 
-[node name="explosion" type="StaticBody2D"]
+[node name="explosion" type="RigidBody2D"]
+contacts_reported = 1
+contact_monitor = true
 script = ExtResource( 1 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
@@ -16,4 +18,5 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_explosion_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

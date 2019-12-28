@@ -18,14 +18,20 @@ func setField():
 	pass
 
 func _input(event):
+	setField()
 	if event.is_action_pressed("mouse_press"):
 		if get_tree().has_group("turrets"):
 			if lastTurretIndex > turrets.size() - 1:
 				lastTurretIndex = 0
 			turrets[lastTurretIndex].fireAt(event.position)
 			lastTurretIndex += 1
-			$enemyRocketSpawner.fireAt(cities[0].position)
+			spawnEnemyRocket()
 
 func turretDestroyed():
-	pass
+	setField()
 	
+func cityDestroyed():
+	setField()
+
+func spawnEnemyRocket():
+	$enemyRocketSpawner.fireAt(cities[0].position)

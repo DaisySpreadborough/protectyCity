@@ -10,3 +10,7 @@ func _ready():
 
 func _process(delta):
 	pass
+
+func destroy():
+	get_parent().cityDestroyed()
+	queue_free()
